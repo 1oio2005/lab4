@@ -1,0 +1,38 @@
+[
+  {
+    "firstName": "David",
+    "lastName": "Jan",
+    "email": "1234@massey.ac.nz",
+    "dateOfBirth": "2008/2/2",
+    "preferences": {
+      "theme": "dark",
+      "language": "english",
+      "notifications": true,
+      "subscription": true
+    }
+  },
+  {
+    "firstName": "Tom",
+    "lastName": "Stive",
+    "email": "2345@massey.ac.nz",
+    "dateOfBirth": "2008/3/3",
+    "preferences": {
+      "theme": "light",
+      "language": "english",
+      "notifications": false,
+      "subscription": false
+    }
+  },
+  {
+    "firstName": "Jade",
+    "lastName": "Fifi",
+    "email": "3456@massey.ac.nz",
+    "dateOfBirth": "2008/6/6",
+    "preferences": {
+      "theme": "dark",
+      "language": "english",
+      "notifications": true,
+      "subscription": false
+    }
+  }
+]

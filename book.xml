@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookcatalogue>
+    <book id="247067">
+        <title>Hello world</title>
+        <author>Tom</author>
+        <price>120</price>
+    </book>
+    <book id="247066">
+        <title>Rose</title>
+        <author>David</author>
+        <price>60</price>
+    </book>
+    <book id="247065">
+        <title>Hope</title>
+        <author>Andi</author>
+        <price>30</price>
+    </book>
+</bookcatalogue>
