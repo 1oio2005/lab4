@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="user profile information">
+    <title>user profiles</title>
+    <style>
+        body { font-family: Arial; margin: 30px; }
+        .user-item {
+            border: 1px solid #666;
+            padding:10px;
+            margin:8px 0;
+            max-width:450px;
+        }
+    </style>
+</head>
+<body>
+<h1>User Profiles from JSON file</h1>
+<div id="userContainer"></div>
+<div id="outputArea"></div>
+
+<script>
+    fetch("userProfiles.json")
+    .then(function(response){
+        if (!response.ok) {
+            throw new Error('Fetch error: ' + response.status);
+        }
+        return response.json();
+    })
+    .then(function(jsonData){
+        const container = document.getElementById("userContainer");
+        for(let i=0;i<jsonData.length;i++){
+            const user = jsonData[i];
+            const div = document.createElement("div");
+            div.className = "user-item";
+            div.innerHTML = `
+                First Name: ${user.firstName}<br>
+                Last Name: ${user.lastName}<br>
+                Email: ${user.email}<br>
+                Date Of Birth: ${user.dateOfBirth}<br>
+                Street: ${user.address.street}<br>
+                City: ${user.address.city}<br>
+                State: ${user.address.state}<br>
+                ZipCode: ${user.address.zipCode}<br>
+                Theme: ${user.preferences.theme}<br>
+                Language: ${user.preferences.language}<br>
+                Notifications: ${user.preferences.notifications}<br>
+                Newsletter Subscription: ${user.preferences.subscription}
+            `;
+            container.appendChild(div);
+        }
+    })
+    .catch(function(error){
+        console.log("Error:", error);
+        document.getElementById("outputArea").textContent = "Cannot load JSON file.";
+    });
+</script>
+</body>
+</html>
